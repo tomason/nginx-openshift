@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/sh -e
 
 echo "---> Installing configuration..."
 cp -Rf /tmp/src/conf.d/*.conf /nginx/conf.d/

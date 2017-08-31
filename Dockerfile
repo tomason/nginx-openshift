@@ -1,9 +1,8 @@
-FROM fedora:latest
+FROM alpine:3.5
 
 LABEL io.openshift.s2i.scripts-url=image:///usr/local/s2i
 
-RUN dnf install -y nginx && \
-    dnf clean all && \
+RUN apk add --no-cache nginx && \
     mkdir -m 0770 /nginx && \
     mkdir -m 0770 /nginx/conf.d && \
     mkdir -m 0770 /nginx/html && \
