@@ -1,0 +1,9 @@
+#!/bin/bash -e
+
+echo "---> Installing configuration..."
+cp -Rf /tmp/src/conf.d/*.conf /nginx/conf.d/
+
+echo "---> Installing html files..."
+cp -Rf /tmp/src/html/. /nginx/html/
+
+echo "---> All done."
