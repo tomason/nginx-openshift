@@ -1,7 +1,10 @@
 #!/bin/sh -e
 
-echo "---> Installing configuration..."
-cp -Rf /tmp/src/conf.d/*.conf /nginx/conf.d/
+echo "---> Installing HTTP configuration..."
+cp -Rf /tmp/src/http.conf.d/*.conf /nginx/http.conf.d/
+
+echo "---> Installing STREAM configuration..."
+cp -Rf /tmp/src/stream.conf.d/*.conf /nginx/stream.conf.d/
 
 echo "---> Installing html files..."
 cp -Rf /tmp/src/html/. /nginx/html/
