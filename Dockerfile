@@ -2,7 +2,7 @@ FROM alpine:3.5
 
 LABEL io.openshift.s2i.scripts-url=image:///usr/local/s2i
 
-RUN apk add --no-cache nginx && \
+RUN apk add --no-cache nginx nginx-mod-stream && \
     mkdir -m 0770 /nginx && \
     mkdir -m 0770 /nginx/conf.d && \
     mkdir -m 0770 /nginx/html && \
