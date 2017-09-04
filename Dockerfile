@@ -10,9 +10,10 @@ RUN apk add --no-cache \
       /nginx/stream.conf.d \
       /nginx/html \
       /nginx/tmp \
-      /nginx/log && \
-    ln -sf /dev/stdout /nginx/log/access.log && \
-    ln -sf /dev/stdout /nginx/log/error.log
+      /nginx/logs && \
+    ln -sf /dev/stdout /nginx/logs/access.log && \
+    ln -sf /dev/stdout /nginx/logs/error.log && \
+    ln -sf /usr/lib/nginx/modules /nginx/modules
     
 COPY nginx.conf /nginx/nginx.conf
 COPY s2i /usr/local/s2i
@@ -21,4 +22,4 @@ RUN chmod -R 0755 /usr/local/s2i
 
 USER 1000
 
-CMD ["nginx", "-c", "/nginx/nginx.conf" ]
+CMD ["nginx", "-p", "/nginx", "-c", "/nginx/nginx.conf" ]
