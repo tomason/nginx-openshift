@@ -9,4 +9,7 @@ cp -Rf /tmp/src/stream.conf.d/*.conf /nginx/stream.conf.d/
 echo "---> Installing html files..."
 cp -Rf /tmp/src/html/. /nginx/html/
 
+echo "---> Testing the generated configuration..."
+nginx -p /nginx -c /nginx/nginx.conf -t
+
 echo "---> All done."
