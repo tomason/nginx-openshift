@@ -11,5 +11,6 @@ cp -Rf /tmp/src/html/. /nginx/html/
 
 echo "---> Testing the generated configuration..."
 nginx -p /nginx -c /nginx/nginx.conf -t
+rm -f /nginx/nginx.pid
 
 echo "---> All done."
