@@ -5,7 +5,8 @@ LABEL io.openshift.s2i.scripts-url=image:///usr/local/s2i
 RUN apk add --no-cache \
       nginx \
       nginx-mod-stream && \
-    mkdir -m 0770 -p \
+    mkdir -m 0770 \
+      /nginx \
       /nginx/http.conf.d \
       /nginx/stream.conf.d \
       /nginx/html \
